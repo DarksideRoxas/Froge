@@ -1,0 +1,13 @@
+#navbar {
+    background-color: aquamarine;
+    position: absolute;
+    top: 2px;
+    right: 16px;
+}
+
+#mainpanel {
+    position: absolute;
+    top: 20px;
+    right: 20%;
+    left: 20%;
+}
