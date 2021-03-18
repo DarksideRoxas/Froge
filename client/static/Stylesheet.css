@@ -1,5 +1,5 @@
 #navbar {
-    background-color: aquamarine;
+    background-color: green;
     position: absolute;
     top: 2px;
     right: 16px;
@@ -10,4 +10,8 @@
     top: 20px;
     right: 20%;
     left: 20%;
+}
+
+form {
+    margin: 0px
 }
