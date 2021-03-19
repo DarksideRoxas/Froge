@@ -40,7 +40,7 @@ app.get('/', function(req, res) {
     res.render('index', {nomen: req.session.userName});
 });
 
-app.get('/Frogs', counter, function(req, res) {
+app.get('/Frogs', function(req, res) {
     res.render('Frogs', {nomen: req.session.userName});
 });
 
