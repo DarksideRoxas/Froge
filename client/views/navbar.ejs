@@ -1,13 +1,25 @@
     <div id="navbar">
-        <form method="post" action="welcome">
-            <a href="/">Home</a> &diam;
-            <a href="/Frogs">Funny Frogs List</a> &diam;
-            <% if(nomen) { %>
-            Hello <%=nomen%>!
-            <% } else { %>
-            <input type="text" name="visitorname" />
-        
-            <button type="submit">Tell me your name</button>
-            <% } %>
-        </form>
+        <a href="/">Home</a> &diam;
+        <a href="/Frogs">Funny Frogs List</a> &diam;
+        <span id ="navwelcome"></span> 
         </div>
+
+        
+        <script>
+        
+
+        $(function() {
+            var name = "<%=data.username %>";
+            var greetNewcomer = "   <input type='text' /><button type='submit'>Tell me your name</button>"
+
+            if(name=="") {
+                 $('#navwelcome').html(greetNewcomer);
+                 $('#navwelcome > button').on();
+            }
+            else {
+                $('#navwelcome').html("Welcome, "+name+"!");
+        
+        });
+
+
+        </script>

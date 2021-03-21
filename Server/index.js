@@ -37,11 +37,11 @@ app.set('views',viewsPath);
 
 app.get('/', function(req, res) {
     console.log(req.session);
-    res.render('index', {nomen: req.session.userName});
+    res.render('index', {data: req.session});
 });
 
 app.get('/Frogs', function(req, res) {
-    res.render('Frogs', {nomen: req.session.userName});
+    res.render('Frogs', {data: req.session});
 });
 
 app.post('/welcome', (req, res) => {
