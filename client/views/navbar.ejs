@@ -14,12 +14,22 @@
 
             if(name=="") {
                  $('#navwelcome').html(greetNewcomer);
-                 $('#navwelcome > button').on();
+                 $('#navwelcome > button').on('click', ()=>{
+                     var visitorName = $('#navwelcome > input').val();
+                     $.ajax({
+                         url: 'welcome',
+                         type: 'POST',
+                         data: {
+                             'nombre': visitorName
+                         },
+                         Success: (data) => {
+                             if(data=='Success') $('#navwelcome').html("Welcome, "+visitorName+"!");
+                         }
+                     });
+                 });
             }
             else {
                 $('#navwelcome').html("Welcome, "+name+"!");
-        
+            }
         });
-
-
         </script>
