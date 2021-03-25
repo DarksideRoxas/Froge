@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>All About Funny Little Froges</title>
+    <%- include('header.ejs') %>
+</head>
+
+<body>
+<div id="mainpanel">
+<hl>So you have decided to discuss the frogs. Haha, fool...</hl>
+
+<form action="/blog/writepost" method="POST">
+<input name="title" type="text" value="TITLE"/><br/>
+<textarea name="entrytext" style="width: 100%; height:500px"></textarea><br/>
+<button type="submit">Post!</button>
+</form>
+</div>
+<%- include('navbar.ejs') %>
+
+</body>
+
+</html>
