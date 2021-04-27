@@ -6,16 +6,36 @@
 
 <body>
 <div id="mainpanel">
-<hl>So you have decided to discuss the frogs. Haha, fool...</hl>
+<h1>So you have decided to discuss the frogs. Haha, fool...</h1>
 
+<% if(draft._id) { %>
+<form action="/blog/<%=draft._id%>/edit" method="POST">
+<% } else { %>
 <form action="/blog/writepost" method="POST">
-<input name="title" type="text" value="TITLE"/><br/>
-<textarea name="entrytext" style="width: 100%; height:500px"></textarea><br/>
+<% } %>
+
+ 
+<input id="title" name="title" type="text"/><br/>
+
+<textarea name="body" style="width: 100%; height:500px">
+<% if(draft.body) { %><%= draft.body %><% } %>
+</textarea><br/>
+
+<% if(draft.title) { %>
+<button type="submit">Update!</button>
+<% } else { %>
 <button type="submit">Post!</button>
+<% } %>
 </form>
 </div>
 <%- include('navbar.ejs') %>
 
+<script>
+var title= "<%=draft.title%>";
+$(()=>{
+    if(title!="") $('#title').val(title);
+})
+</script>
 </body>
 
 </html>

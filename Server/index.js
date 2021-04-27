@@ -4,7 +4,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const { Cookie } = require('express-session');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const {BlogPost} = require('./models.js')
 
 // Navigation
 
@@ -27,6 +28,7 @@ app.use(session({
         }
 }));
 
+mongoose.connect('mongodb://localhost:27017/Frogs', {useNewUrlParser: true});
 app.listen(2000);
 
 // Setting views

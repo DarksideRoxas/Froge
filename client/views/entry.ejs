@@ -5,10 +5,14 @@
 </head>
 
 <body>
-
+<div id="mainpanel">
 <hl><%entry.title%></hl>
 
-<%=entry.body=>
+<%=entry.body%>
+
+<br/><br/>
+(<a href="edit">Edit</a> | <a href="delete">Delete</a>)
+</div>
 
 <%- include('navbar.ejs') %>
 
