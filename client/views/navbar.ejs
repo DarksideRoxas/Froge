@@ -2,7 +2,7 @@
     <a href="/">Home</a> &diam;
     <a href="/Frogs">Funny Frogs List</a> &diam;
     <a herf="/blog/">Blog</a> &diam;
-    <span id ="navwelcome"></span> 
+    <span id ="navwelcome">Greetings, <a href="/login">stranger</a>.</span> 
     </div>
 
         
@@ -11,31 +11,34 @@
 
         $(function() {
             var name = "<%=data.username %>";
-            var greetNewcomer = "   <input type='text' /><button type='submit'>Tell me your name</button>"
 
-            const sayYourName = function() {
-                var visitorName = $('#navwelcome > input').val();
-                var visitorName = $('#navwelcome > input').val();
-                     $.ajax({
-                         url: 'welcome',
-                         type: 'POST',
-                         data: {
-                             'nombre': visitorName
-                         },
-                         Success: (data) => {
-                             if(data=='Success') $('#navwelcome').html("Welcome, "+visitorName+"!");
-                         }
-                     });
-                    }
-            if(name=="") {
-                 $('#navwelcome').html(greetNewcomer);
-                 $('#navwelcome > button').on('click', sayYourName);
-                 $('#navwelcome > input').on('keyup', (key) => {
-                    if(key.keyCode==13) sayYourName();   
-                 });
-            }
-            else {
-                $('#navwelcome').html("Welcome, "+name+"!");
-            }
+            if(name!="") $('#navwelcome').html("Welcome, "+name);
+
+//           var greetNewcomer = "   <input type='text' /><button type='submit'>Tell me your name</button>"
+//
+//           const sayYourName = function() {
+//             var visitorName = $('#navwelcome > input').val();
+//             var visitorName = $('#navwelcome > input').val();
+//                 $.ajax({
+//                        url: '/welcome',
+//                      type: 'POST',
+//                    data: {
+//                      'nombre': visitorName
+//                },
+//              Success: (data) => {
+//                if(data=='Success') $('#navwelcome').html("Welcome, "+visitorName+"!");
+//          }
+//    });
+//                    }
+//            if(name=="") {
+//                 $('#navwelcome').html(greetNewcomer);
+//                 $('#navwelcome > button').on('click', sayYourName);
+//                 $('#navwelcome > input').on('keyup', (key) => {
+//                    if(key.keyCode==13) sayYourName();   
+//                 });
+//            }
+//            else {
+//                $('#navwelcome').html("Welcome, "+name+"!");
+//            }
         });
         </script>

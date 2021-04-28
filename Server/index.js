@@ -36,6 +36,11 @@ app.listen(2000);
 app.set('view engine','ejs');
 app.set('views',viewsPath);
 
+app.use((req, res, next) => {
+    console.log(req.originalUrl);
+    next();
+})
+
 // Routes
 
 app.get('/', function(req, res) {
