@@ -20,7 +20,7 @@
 <% entry.comments.forEach(function(comment) { %>
 <div><%= comment.text %></div>
 <i><%= comment.author %></i>
-    <% if(data.isDragonmaster) { %>
+    <% if(data.isFrogmaster) { %>
     <form action="deletecomment/<%=comment._id%>" method="post"><button type="submit">Delete</button></form>
     <%}%>
     <br/><br/>

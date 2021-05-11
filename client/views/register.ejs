@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Tell us who you are</title>
+        <%- include('header.ejs') %>
+    </head>
+
+    <body>
+        <div id="mainpanel">
+            <h1 align="center">Tell us who you are</h1>
+            <br/><br/>
+
+            <form method="post" action="/register">
+            <table align="center">
+                <tr>
+                    <td>Name: </td>
+                    <td><input type="text" name="username" id="username"/></td>
+                </tr>
+                <tr>
+                    <td>Password: </td>
+                    <td><input type="password" name="password" id="password" /></td>
+                </tr>
+                <tr>
+                    <td>Confirm password: </td>
+                    <td><input type="password" id="confirmpassword" /></td>
+                </tr>
+                <tr>
+                    <td>Funny Frogs: </td>
+                    <td>
+                        <select name="favourite" >
+                            <option value="red">Red Frog</option>
+                            <option value="blue">Blue Frog</option>
+                            <option value="green">Green Frog</option>
+                            <option value="purple">Purple Frog</option>
+                            <option value="black">Black Frog</option>
+                            <option value="white">White Frog</option>
+                            <option value="orange">Orange Frog</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" id="register" disabled>Register</button>
+                    </td>
+                </tr>   
+            </table>
+            </form>
+        </div>
+        <%- include('navbar.ejs') %>
+
+        <script>
+            $(()=>{
+                $('input').on('keyup', ()=>{
+                    if($('#password').val()==$('#confirmpassword').val()
+                    && $('#username').val()!=""
+                    && $('#password').val()!="") {
+                        console.log($('#username').val());    
+                        $('#register').prop('disabled', false);
+                        }
+                    else {
+                        $('#register').prop('disabled', true);
+                    }
+                })
+            });
+        </script>
+    </body>
+</htmL>
